@@ -1,0 +1,22 @@
+Enter number of nodes: Enter number of edges: Edge #1 start, end: Edge #2 start, end: Edge #3 start, end: Edge #4 start, end: Edge #5 start, end: Edge #6 start, end: Edge #7 start, end: -------------
+Node #1 Incoming: {3, } Outgoing: {2, }
+Node #2 Incoming: {1, } Outgoing: {3, 4, }
+Node #3 Incoming: {2, } Outgoing: {1, 5, }
+Node #4 Incoming: {5, 2, } Outgoing: {}
+Node #5 Incoming: {3, 5, } Outgoing: {4, 5, }
+-------------
+For Node #1:
+Outgoing edges is/are to: {2, }
+Incoming edges is/are to: {3, }
+For Node #2:
+Outgoing edges is/are to: {3, 4, }
+Incoming edges is/are to: {1, }
+For Node #3:
+Outgoing edges is/are to: {1, 5, }
+Incoming edges is/are to: {2, }
+For Node #4:
+Outgoing edges is/are to: {}
+Incoming edges is/are to: {5, 2, }
+For Node #5:
+Outgoing edges is/are to: {4, 5, }
+Incoming edges is/are to: {3, 5, }

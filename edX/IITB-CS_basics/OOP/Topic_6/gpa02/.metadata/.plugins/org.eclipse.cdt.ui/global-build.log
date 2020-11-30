@@ -1,0 +1,488 @@
+01:49:41 **** Build of configuration Debug for project RockPaperScissor ****
+make all 
+Building file: ../main.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+Finished building: ../main.cpp
+ 
+Building file: ../weapon.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"weapon.d" -MT"weapon.o" -o "weapon.o" "../weapon.cpp"
+../weapon.cpp: In constructor ‘Rock::Rock()’:
+../weapon.cpp:15:14: error: class ‘Rock’ does not have any field named ‘type’
+ Rock::Rock():type('r'){}
+              ^~~~
+../weapon.cpp: In member function ‘bool Rock::battle(Weapon)’:
+../weapon.cpp:17:28: error: ‘int Weapon::strength’ is protected within this context
+  int s = strength, x_s = x.strength;
+                            ^~~~~~~~
+In file included from ../weapon.cpp:8:0:
+../weapon.h:13:6: note: declared protected here
+  int strength;
+      ^~~~~~~~
+../weapon.cpp: In constructor ‘Paper::Paper()’:
+../weapon.cpp:26:16: error: class ‘Paper’ does not have any field named ‘type’
+ Paper::Paper():type('p'){}
+                ^~~~
+../weapon.cpp: In member function ‘bool Paper::battle(Weapon)’:
+../weapon.cpp:28:28: error: ‘int Weapon::strength’ is protected within this context
+  int s = strength, x_s = x.strength;
+                            ^~~~~~~~
+In file included from ../weapon.cpp:8:0:
+../weapon.h:13:6: note: declared protected here
+  int strength;
+      ^~~~~~~~
+../weapon.cpp: In constructor ‘Scissor::Scissor()’:
+../weapon.cpp:36:20: error: class ‘Scissor’ does not have any field named ‘type’
+ Scissor::Scissor():type('s'){}
+subdir.mk:21: recipe for target 'weapon.o' failed
+                    ^~~~
+../weapon.cpp: In member function ‘bool Scissor::battle(Weapon)’:
+../weapon.cpp:38:28: error: ‘int Weapon::strength’ is protected within this context
+  int s = strength, x_s = x.strength;
+                            ^~~~~~~~
+In file included from ../weapon.cpp:8:0:
+../weapon.h:13:6: note: declared protected here
+  int strength;
+      ^~~~~~~~
+make: *** [weapon.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+01:54:56 **** Incremental Build of configuration Debug for project RockPaperScissor ****
+make all 
+Building file: ../main.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+Finished building: ../main.cpp
+ 
+Building file: ../weapon.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"weapon.d" -MT"weapon.o" -o "weapon.o" "../weapon.cpp"
+../weapon.cpp: In constructor ‘Rock::Rock()’:
+../weapon.cpp:16:14: error: class ‘Rock’ does not have any field named ‘type’
+ Rock::Rock():type('r'){}
+              ^~~~
+../weapon.cpp: In member function ‘bool Rock::battle(Weapon)’:
+../weapon.cpp:19:7: error: ‘char Weapon::type’ is protected within this context
+  if(x.type=='p'){s/=2;x_s*=2;}
+       ^~~~
+In file included from ../weapon.cpp:8:0:
+../weapon.h:14:7: note: declared protected here
+subdir.mk:21: recipe for target 'weapon.o' failed
+  char type;//'r','p','s'
+       ^~~~
+../weapon.cpp:20:7: error: ‘char Weapon::type’ is protected within this context
+  if(x.type=='s'){s*=2;x_s/=2;}
+       ^~~~
+In file included from ../weapon.cpp:8:0:
+../weapon.h:14:7: note: declared protected here
+  char type;//'r','p','s'
+       ^~~~
+../weapon.cpp: In constructor ‘Paper::Paper()’:
+../weapon.cpp:27:16: error: class ‘Paper’ does not have any field named ‘type’
+ Paper::Paper():type('p'){}
+                ^~~~
+../weapon.cpp: In member function ‘bool Paper::battle(Weapon)’:
+../weapon.cpp:29:28: error: ‘int Weapon::strength’ is protected within this context
+  int s = strength, x_s = x.strength;
+                            ^~~~~~~~
+In file included from ../weapon.cpp:8:0:
+../weapon.h:13:6: note: declared protected here
+  int strength;
+      ^~~~~~~~
+../weapon.cpp:30:8: error: ‘char Weapon::type’ is protected within this context
+   if(x.type=='r'){s*=2;x_s/=2;}
+        ^~~~
+In file included from ../weapon.cpp:8:0:
+../weapon.h:14:7: note: declared protected here
+  char type;//'r','p','s'
+       ^~~~
+../weapon.cpp:31:8: error: ‘char Weapon::type’ is protected within this context
+   if(x.type=='s'){s/=2;x_s*=2;}
+        ^~~~
+In file included from ../weapon.cpp:8:0:
+../weapon.h:14:7: note: declared protected here
+  char type;//'r','p','s'
+       ^~~~
+../weapon.cpp: In constructor ‘Scissor::Scissor()’:
+../weapon.cpp:37:20: error: class ‘Scissor’ does not have any field named ‘type’
+ Scissor::Scissor():type('s'){}
+                    ^~~~
+../weapon.cpp: In member function ‘bool Scissor::battle(Weapon)’:
+../weapon.cpp:39:28: error: ‘int Weapon::strength’ is protected within this context
+  int s = strength, x_s = x.strength;
+                            ^~~~~~~~
+In file included from ../weapon.cpp:8:0:
+../weapon.h:13:6: note: declared protected here
+  int strength;
+      ^~~~~~~~
+../weapon.cpp:40:9: error: ‘char Weapon::type’ is protected within this context
+    if(x.type=='r'){s/=2;x_s*=2;}
+         ^~~~
+In file included from ../weapon.cpp:8:0:
+../weapon.h:14:7: note: declared protected here
+  char type;//'r','p','s'
+       ^~~~
+../weapon.cpp:41:9: error: ‘char Weapon::type’ is protected within this context
+    if(x.type=='p'){s*=2;x_s/=2;}
+         ^~~~
+In file included from ../weapon.cpp:8:0:
+../weapon.h:14:7: note: declared protected here
+  char type;//'r','p','s'
+       ^~~~
+make: *** [weapon.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+01:56:52 **** Incremental Build of configuration Debug for project RockPaperScissor ****
+make all 
+Building file: ../weapon.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"weapon.d" -MT"weapon.o" -o "weapon.o" "../weapon.cpp"
+../weapon.cpp: In constructor ‘Rock::Rock()’:
+../weapon.cpp:16:14: error: class ‘Rock’ does not have any field named ‘type’
+ Rock::Rock():type('r'){}
+              ^~~~
+../weapon.cpp: In constructor ‘Paper::Paper()’:
+../weapon.cpp:27:16: error: class ‘Paper’ does not have any field named ‘type’
+ Paper::Paper():type('p'){}
+                ^~~~
+../weapon.cpp: In constructor ‘Scissor::Scissor()’:
+../weapon.cpp:37:20: error: class ‘Scissor’ does not have any field named ‘type’
+ Scissor::Scissor():type('s'){}
+                    ^~~~
+subdir.mk:21: recipe for target 'weapon.o' failed
+make: *** [weapon.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+01:59:29 **** Incremental Build of configuration Debug for project RockPaperScissor ****
+make all 
+Building file: ../main.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+Finished building: ../main.cpp
+ 
+Building file: ../weapon.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"weapon.d" -MT"weapon.o" -o "weapon.o" "../weapon.cpp"
+Finished building: ../weapon.cpp
+ 
+Building target: RockPaperScissor
+Invoking: Cross G++ Linker
+g++  -o "RockPaperScissor"  ./main.o ./weapon.o   
+Finished building target: RockPaperScissor
+ 
+01:59:36 **** Incremental Build of configuration Debug for project RockPaperScissor ****
+make all 
+make: Nothing to be done for 'all'.
+01:59:55 **** Incremental Build of configuration Debug for project RockPaperScissor ****
+make all 
+make: Nothing to be done for 'all'.
+02:01:18 **** Incremental Build of configuration Debug for project RockPaperScissor ****
+make all 
+Building file: ../main.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+Finished building: ../main.cpp
+ 
+Building target: RockPaperScissor
+Invoking: Cross G++ Linker
+g++  -o "RockPaperScissor"  ./main.o ./weapon.o   
+Finished building target: RockPaperScissor
+ 
+02:01:22 **** Incremental Build of configuration Debug for project RockPaperScissor ****
+make all 
+make: Nothing to be done for 'all'.
+02:15:16 **** Incremental Build of configuration Debug for project RockPaperScissor ****
+make all 
+Building file: ../weapon.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"weapon.d" -MT"weapon.o" -o "weapon.o" "../weapon.cpp"
+In file included from ../weapon.cpp:8:0:
+../weapon.h: In constructor ‘Weapon::Weapon(char)’:
+../weapon.h:14:7: warning: ‘Weapon::type’ will be initialized after [-Wreorder]
+  char type;//'r','p','s'
+       ^~~~
+../weapon.h:13:6: warning:   ‘int Weapon::strength’ [-Wreorder]
+  int strength;
+      ^~~~~~~~
+../weapon.cpp:11:1: warning:   when initialized here [-Wreorder]
+ Weapon::Weapon(char x):type(x),strength(0){}
+ ^~~~~~
+Finished building: ../weapon.cpp
+ 
+Building target: RockPaperScissor
+Invoking: Cross G++ Linker
+g++  -o "RockPaperScissor"  ./main.o ./weapon.o   
+Finished building target: RockPaperScissor
+ 
+02:15:23 **** Incremental Build of configuration Debug for project RockPaperScissor ****
+make all 
+make: Nothing to be done for 'all'.
+02:15:25 **** Incremental Build of configuration Debug for project RockPaperScissor ****
+make all 
+make: Nothing to be done for 'all'.
+02:27:58 **** Incremental Build of configuration Debug for project RockPaperScissor ****
+make all 
+make: Nothing to be done for 'all'.
+02:27:58 **** Build of configuration Debug for project try_protected ****
+make all 
+Building file: ../main.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+Finished building: ../main.cpp
+ 
+Building file: ../prot.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"prot.d" -MT"prot.o" -o "prot.o" "../prot.cpp"
+Finished building: ../prot.cpp
+ 
+Building target: try_protected
+Invoking: Cross G++ Linker
+g++  -o "try_protected"  ./main.o ./prot.o   
+Finished building target: try_protected
+ 
+02:29:00 **** Incremental Build of configuration Debug for project RockPaperScissor ****
+make all 
+Building file: ../weapon.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"weapon.d" -MT"weapon.o" -o "weapon.o" "../weapon.cpp"
+In file included from ../weapon.cpp:8:0:
+../weapon.h: In constructor ‘Weapon::Weapon(char)’:
+../weapon.h:14:7: warning: ‘Weapon::type’ will be initialized after [-Wreorder]
+  char type;//'r','p','s'
+       ^~~~
+../weapon.h:13:6: warning:   ‘int Weapon::strength’ [-Wreorder]
+  int strength;
+      ^~~~~~~~
+../weapon.cpp:11:1: warning:   when initialized here [-Wreorder]
+ Weapon::Weapon(char x):type(x),strength(0){}
+ ^~~~~~
+../weapon.cpp: In member function ‘bool Rock::battle(Weapon)’:
+../weapon.cpp:20:28: error: ‘int Weapon::strength’ is protected within this context
+  int s = strength, x_s = x.strength;
+                            ^~~~~~~~
+In file included from ../weapon.cpp:8:0:
+../weapon.h:13:6: note: declared protected here
+  int strength;
+      ^~~~~~~~
+subdir.mk:21: recipe for target 'weapon.o' failed
+make: *** [weapon.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+02:29:01 **** Incremental Build of configuration Debug for project try_protected ****
+make all 
+make: Nothing to be done for 'all'.
+02:35:31 **** Incremental Build of configuration Debug for project RockPaperScissor ****
+make all 
+Building file: ../weapon.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"weapon.d" -MT"weapon.o" -o "weapon.o" "../weapon.cpp"
+In file included from ../weapon.cpp:8:0:
+../weapon.h: In constructor ‘Weapon::Weapon(char)’:
+../weapon.h:14:7: warning: ‘Weapon::type’ will be initialized after [-Wreorder]
+  char type;//'r','p','s'
+       ^~~~
+../weapon.h:13:6: warning:   ‘int Weapon::strength’ [-Wreorder]
+  int strength;
+      ^~~~~~~~
+../weapon.cpp:11:1: warning:   when initialized here [-Wreorder]
+ Weapon::Weapon(char x):type(x),strength(0){}
+ ^~~~~~
+Finished building: ../weapon.cpp
+ 
+Building target: RockPaperScissor
+Invoking: Cross G++ Linker
+g++  -o "RockPaperScissor"  ./main.o ./weapon.o   
+Finished building target: RockPaperScissor
+ 
+02:36:14 **** Incremental Build of configuration Debug for project RockPaperScissor ****
+make all 
+Building file: ../main.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+Finished building: ../main.cpp
+ 
+Building file: ../weapon.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"weapon.d" -MT"weapon.o" -o "weapon.o" "../weapon.cpp"
+In file included from ../weapon.cpp:8:0:
+../weapon.h: In constructor ‘Weapon::Weapon(char)’:
+../weapon.h:14:12: warning: ‘Weapon::type’ will be initialized after [-Wreorder]
+  char type='\0';//'r','p','s'
+            ^~~~
+../weapon.h:13:15: warning:   ‘int Weapon::strength’ [-Wreorder]
+  int strength=0;
+               ^
+../weapon.cpp:11:1: warning:   when initialized here [-Wreorder]
+ Weapon::Weapon(char x):type(x),strength(0){}
+ ^~~~~~
+Finished building: ../weapon.cpp
+ 
+Building target: RockPaperScissor
+Invoking: Cross G++ Linker
+g++  -o "RockPaperScissor"  ./main.o ./weapon.o   
+Finished building target: RockPaperScissor
+ 
+02:39:32 **** Incremental Build of configuration Debug for project RockPaperScissor ****
+make all 
+make: Nothing to be done for 'all'.
+02:39:32 **** Incremental Build of configuration Debug for project try_protected ****
+make all 
+Building file: ../main.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+../main.cpp: In function ‘int main()’:
+../main.cpp:13:12: error: no matching function for call to ‘Derived::Derived()’
+    Derived obj;
+            ^~~
+In file included from ../main.cpp:9:0:
+../prot.h:17:4: note: candidate: Derived::Derived(int)
+    Derived(int x);
+    ^~~~~~~
+../prot.h:17:4: note:   candidate expects 1 argument, 0 provided
+../prot.h:15:7: note: candidate: constexpr Derived::Derived(const Derived&)
+ class Derived : public Base {
+       ^~~~~~~
+../prot.h:15:7: note:   candidate expects 1 argument, 0 provided
+../prot.h:15:7: note: candidate: constexpr Derived::Derived(Derived&&)
+../prot.h:15:7: note:   candidate expects 1 argument, 0 provided
+subdir.mk:21: recipe for target 'main.o' failed
+make: *** [main.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+02:39:51 **** Incremental Build of configuration Debug for project RockPaperScissor ****
+make all 
+make: Nothing to be done for 'all'.
+02:39:51 **** Incremental Build of configuration Debug for project try_protected ****
+make all 
+Building file: ../main.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+../main.cpp: In function ‘int main()’:
+../main.cpp:13:12: error: no matching function for call to ‘Derived::Derived()’
+    Derived obj;
+            ^~~
+In file included from ../main.cpp:9:0:
+../prot.h:17:4: note: candidate: Derived::Derived(int)
+    Derived(int x);
+    ^~~~~~~
+../prot.h:17:4: note:   candidate expects 1 argument, 0 provided
+../prot.h:15:7: note: candidate: constexpr Derived::Derived(const Derived&)
+ class Derived : public Base {
+       ^~~~~~~
+../prot.h:15:7: note:   candidate expects 1 argument, 0 provided
+../prot.h:15:7: note: candidate: constexpr Derived::Derived(Derived&&)
+../prot.h:15:7: note:   candidate expects 1 argument, 0 provided
+subdir.mk:21: recipe for target 'main.o' failed
+make: *** [main.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+02:40:43 **** Incremental Build of configuration Debug for project RockPaperScissor ****
+make all 
+make: Nothing to be done for 'all'.
+02:40:43 **** Incremental Build of configuration Debug for project try_protected ****
+make all 
+Building file: ../main.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+Finished building: ../main.cpp
+ 
+Building file: ../prot.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"prot.d" -MT"prot.o" -o "prot.o" "../prot.cpp"
+../prot.cpp: In constructor ‘Derived::Derived(int)’:
+../prot.cpp:17:25: error: class ‘Derived’ does not have any field named ‘num’
+ Derived::Derived(int x):num(x){}
+                         ^~~
+subdir.mk:21: recipe for target 'prot.o' failed
+make: *** [prot.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+02:41:07 **** Incremental Build of configuration Debug for project RockPaperScissor ****
+make all 
+make: Nothing to be done for 'all'.
+02:41:08 **** Incremental Build of configuration Debug for project try_protected ****
+make all 
+Building file: ../prot.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"prot.d" -MT"prot.o" -o "prot.o" "../prot.cpp"
+../prot.cpp: In constructor ‘Derived::Derived(int)’:
+../prot.cpp:17:34: error: expected class-name before ‘(’ token
+ Derived::Derived(int x):Base::num(x){}
+                                  ^
+../prot.cpp:17:34: error: expected ‘{’ before ‘(’ token
+../prot.cpp: At global scope:
+../prot.cpp:17:37: error: expected constructor, destructor, or type conversion before ‘{’ token
+ Derived::Derived(int x):Base::num(x){}
+                                     ^
+make: *** [prot.o] Error 1
+subdir.mk:21: recipe for target 'prot.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+02:41:31 **** Incremental Build of configuration Debug for project RockPaperScissor ****
+make all 
+make: Nothing to be done for 'all'.
+02:41:31 **** Incremental Build of configuration Debug for project try_protected ****
+make all 
+Building file: ../prot.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"prot.d" -MT"prot.o" -o "prot.o" "../prot.cpp"
+../prot.cpp: In constructor ‘Derived::Derived(int)’:
+../prot.cpp:17:25: error: expected identifier before ‘{’ token
+ Derived::Derived(int x):{num=x;}
+                         ^
+make: *** [prot.o] Error 1
+subdir.mk:21: recipe for target 'prot.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+02:42:14 **** Incremental Build of configuration Debug for project RockPaperScissor ****
+make all 
+make: Nothing to be done for 'all'.
+02:42:14 **** Incremental Build of configuration Debug for project try_protected ****
+make all 
+Building file: ../prot.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"prot.d" -MT"prot.o" -o "prot.o" "../prot.cpp"
+Finished building: ../prot.cpp
+ 
+Building target: try_protected
+Invoking: Cross G++ Linker
+g++  -o "try_protected"  ./main.o ./prot.o   
+Finished building target: try_protected
+ 
+02:42:23 **** Incremental Build of configuration Debug for project RockPaperScissor ****
+make all 
+make: Nothing to be done for 'all'.
+02:42:23 **** Incremental Build of configuration Debug for project try_protected ****
+make all 
+Building file: ../prot.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"prot.d" -MT"prot.o" -o "prot.o" "../prot.cpp"
+Finished building: ../prot.cpp
+ 
+Building target: try_protected
+Invoking: Cross G++ Linker
+g++  -o "try_protected"  ./main.o ./prot.o   
+Finished building target: try_protected
+ 
+02:42:47 **** Incremental Build of configuration Debug for project RockPaperScissor ****
+make all 
+make: Nothing to be done for 'all'.
+02:42:47 **** Incremental Build of configuration Debug for project try_protected ****
+make all 
+Building file: ../prot.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"prot.d" -MT"prot.o" -o "prot.o" "../prot.cpp"
+../prot.cpp: In constructor ‘Derived::Derived(int)’:
+../prot.cpp:17:25: error: class ‘Derived’ does not have any field named ‘num’
+ Derived::Derived(int x):num(x){}
+                         ^~~
+subdir.mk:21: recipe for target 'prot.o' failed
+make: *** [prot.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+02:43:07 **** Incremental Build of configuration Debug for project RockPaperScissor ****
+make all 
+make: Nothing to be done for 'all'.
+02:43:07 **** Incremental Build of configuration Debug for project try_protected ****
+make all 
+Building file: ../prot.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"prot.d" -MT"prot.o" -o "prot.o" "../prot.cpp"
+Finished building: ../prot.cpp
+ 
+Building target: try_protected
+Invoking: Cross G++ Linker
+g++  -o "try_protected"  ./main.o ./prot.o   
+Finished building target: try_protected
+ 

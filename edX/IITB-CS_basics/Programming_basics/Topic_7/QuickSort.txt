@@ -1,0 +1,68 @@
+#ifndef QUICK_SORT_HH
+#define QUICK_SORT_HH
+
+#include "InsertionSort.hh"
+#include <algorithm>
+
+template<typename ItemType>
+unsigned Partition(ItemType* array, unsigned f, unsigned l, ItemType pivot)
+{
+    unsigned i = f-1, j = l+1;
+    while(true)
+    {
+        while(pivot < array[--j]);
+        while(array[++i] < pivot);
+        if(i<j)
+        {
+            ItemType tmp = array[i];
+            array[i] = array[j];
+            array[j] = tmp;
+        }
+        else
+            return j;
+    }
+}
+
+template<typename ItemType>
+void QuickSortImpl(ItemType* array, unsigned f, unsigned l)
+{
+    while(f < l)
+    {
+        unsigned m = Partition(array, f, l, array[f]);
+        QuickSortImpl(array, f, m);
+        f = m+1;
+    }
+}
+
+template<typename ItemType>
+void QuickSort(ItemType* array, unsigned size)
+{
+    QuickSortImpl(array, 0, size-1);
+}
+
+template<typename ItemType>
+void MedianHybridQuickSortImpl(ItemType* array, unsigned f, unsigned l)
+{
+    while(f+16 < l)
+    {
+        ItemType v1 = array[f], v2 = array[l], v3 = array[(f+l)/2];
+        ItemType median =
+            v1 < v2 ?
+            ( v3 < v1 ? v1 : std::min(v2, v3)
+             ) :
+            ( v3 < v2 ? v2 : std::min(v1, v3)
+             );
+        unsigned m = Partition(array, f, l, median);
+        MedianHybridQuickSortImpl(array, f, m);
+        f = m+1;
+    }
+}
+
+template<typename ItemType>
+void MedianHybridQuickSort(ItemType* array, unsigned size)
+{
+    MedianHybridQuickSortImpl(array, 0, size-1);
+    InsertionSort(array, size);
+}
+
+#endif

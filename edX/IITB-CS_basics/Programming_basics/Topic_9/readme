@@ -1,0 +1,8 @@
+files
+-------------------------
+file storage
+file pointers, fopen, fclose, feof
+i/o redirection $./myprog <input.txt >output.txt
+printf() and scanf() for writing and reading variables of specified format
+sprintf(), sscanf() for reading writing into a string variable
+fprintf(), fscanf() for reading, writing from/to file

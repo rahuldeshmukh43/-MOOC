@@ -1,0 +1,20 @@
+#ifndef INSERTION_SORT_HH
+#define INSERTION_SORT_HH
+
+template<typename ItemType>
+void InsertionSort(ItemType* array, unsigned size)
+{
+    for(unsigned i = 1; i < size; ++i)
+    {
+        ItemType val = array[i];
+        unsigned j = i;
+        while(j > 0 && val < array[j-1])
+        {
+            array[j] = array[j-1];
+            --j;
+        }
+        array[j] = val;
+    }
+}
+
+#endif

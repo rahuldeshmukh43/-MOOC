@@ -1,0 +1,27 @@
+/*
+ * weapon.cpp
+ *
+ *  Created on: Nov 25, 2020
+ *      Author: rahul
+ */
+
+//Weapon
+
+
+void Weapon::setPower(int x){strength=x;}
+int Weapon::return_strength(){return strength;}
+
+//Rock
+Rock::Rock()
+
+//Paper
+
+Paper::Paper();
+
+
+class Scissor:public Weapon{
+public:
+	Scissor();
+};
+
+

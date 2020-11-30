@@ -1,0 +1,38 @@
+#ifndef MERGE_SORT_HH
+#define MERGE_SORT_HH
+
+template<typename ItemType>
+void MergeSort(ItemType* array, ItemType* helpArray, unsigned size)
+{
+    ItemType* src = array;
+    ItemType* dst = helpArray;
+
+    for(unsigned bSize = 2; bSize < size*2; bSize *= 2)
+    {
+        unsigned dstInd = 0;
+        for(unsigned bInd = 0; bInd < size; bInd += bSize)
+        {
+            unsigned sbInd1 = bInd, sbInd1e = bInd+bSize/2;
+            if(sbInd1e > size) sbInd1e = size;
+            unsigned sbInd2 = sbInd1e, sbInd2e = bInd+bSize;
+            if(sbInd2e > size) sbInd2e = size;
+            while(sbInd1 < sbInd1e && sbInd2 < sbInd2e)
+            {
+                if(src[sbInd1] < src[sbInd2])
+                    dst[dstInd++] = src[sbInd1++];
+                else
+                    dst[dstInd++] = src[sbInd2++];
+            }
+            while(sbInd1 < sbInd1e) dst[dstInd++] = src[sbInd1++];
+            while(sbInd2 < sbInd2e) dst[dstInd++] = src[sbInd2++];
+        }
+        ItemType* tmp = src; src = dst; dst = tmp;
+    }
+    if(src == helpArray)
+    {
+        for(unsigned i = 0; i < size; ++i)
+            dst[i] = src[i];
+    }
+}
+
+#endif
