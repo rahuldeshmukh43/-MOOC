@@ -21,14 +21,14 @@ int main(int argc, char **argv){
 	cout<<"Input expression using numbers, operator(+,-,/,*) and parentheses '(',')'"<<endl;
 	//getline(cin,inp_str);
 	string inp_str=argv[1];
-	cout<< "Expressition give: "<<inp_str<<endl;
+	cout<< "Expression given: "<<inp_str<<endl;
 
 	flagParser= Parser(inp_str, op_str);
 	if(!flagParser){return -1;}
 
 	//print string
-	cout<<"Post-Fix notation expression:\n";
-	printf("%s\n",op_str.c_str());
+	cout<<"Post-Fix notation expression: ";
+	printf("%s\n\n",op_str.c_str());
 	return 0;
 }
 
