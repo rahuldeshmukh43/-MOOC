@@ -79,11 +79,11 @@ bool StringHasChar(char *s, char q, int len){
 	return flag;
 }
 
-int main(){
+int main(int argc, char **argv){
 
 int istr=0,itmp=0, numNodes=0, inp_len, temp_len=0;//numEdges=0
 int iNode=0, prev_symb=0, new_symb;
-char inp_string[100], tempstr[100];
+char *inp_string = argv[1] ,tempstr[100];
 //bool lastExpr=false;
 bool inp_has_x=false;
 
@@ -91,8 +91,8 @@ Node *L, *R, *root;
 Node temp;
 
 //get input string
-cout<<"Enter expression whose derivative needs to be computed: \n";
-fgets(inp_string,100,stdin);
+//cout<<"Enter expression whose derivative needs to be computed: \n";
+//fgets(inp_string,100,stdin);
 inp_len = strlen(inp_string);
 if(inp_string[inp_len-1]=='\n'){inp_string[inp_len-1]='\0';inp_len--;}
 inp_has_x = StringHasChar(inp_string, 'x', inp_len);
